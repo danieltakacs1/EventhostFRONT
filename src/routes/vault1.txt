@@ -1,0 +1,80 @@
+
+<body data-theme="rocket">
+	<div class="flex justify-center space-x-2">
+
+		<p class="">Események</p>
+	
+		<p class="">Jegyeim</p>	
+	
+	</div>
+	<div class="flex justify-center space-x-2">
+		
+		
+	
+		<select class="select w-full max-w-[680px]" size="12" value="1">
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+			<option value="4">Option 4</option>
+			<option value="5">Option 5</option>
+		</select>
+	
+		<select class="select w-full max-w-[680px]" size="12" value="1">
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+			<option value="4">Option 4</option>
+			<option value="5">Option 5</option>
+		</select>
+						
+	</div>
+</body>
+
+<style lang="postcss">
+
+</style>
+<script lang="ts">
+	
+</script>
+
+
+
+
+<AppShell>
+	<svelte:fragment slot="header">Header</svelte:fragment>
+	<svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment>
+	<!-- (sidebarRight) -->
+	<!-- (pageHeader) -->
+	<!-- Router Slot -->
+	<slot />
+	<!-- ---- / ---- -->
+	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
+	<!-- (footer) -->
+</AppShell>
+
+
+
+<AppShell>
+	<AppRail>
+		<svelte:fragment slot="lead">
+			<AppRailAnchor href="/" >(icon)</AppRailAnchor>
+		</svelte:fragment>
+		<!-- --- -->
+		<AppRailTile bind:group={currentTile} name="tile-1" value={1} title="Tile 1">
+			<svelte:fragment slot="lead"></svelte:fragment>
+			<span>Főoldal</span>
+		</AppRailTile>
+		<AppRailTile bind:group={currentTile} name="tile-2" value={1} title="Tile 2">
+			<svelte:fragment slot="lead"></svelte:fragment>
+			<span>Események</span>
+		</AppRailTile>
+		<AppRailTile bind:group={currentTile} name="tile-3" value={2} title="Tile 3">
+			<svelte:fragment slot="lead"></svelte:fragment>
+			<span>Jegyeim</span>
+		</AppRailTile>
+		<!-- --- -->
+		<svelte:fragment slot="trail">
+			<AppRailAnchor href="/" target="_blank" title="Account">(icon)</AppRailAnchor>
+		</svelte:fragment>
+	</AppRail>
+</AppShell>
